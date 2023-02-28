@@ -1,3 +1,7 @@
+const User = require("../model/user.model");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+
 const getUser = async (req, res) => {
   try {
     const token = jwt.sign({ _id: req.user._id }, process.env.jwt);
