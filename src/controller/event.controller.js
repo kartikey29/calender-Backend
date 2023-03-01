@@ -32,7 +32,7 @@ const upcomingEvents = async (req, res) => {
   try {
     const { reqDate } = req.params;
     const data = await Event.find({
-      date: { $gte: reqDate },
+      startTime: { $gte: reqDate },
       userId: req.user._id,
     }).sort({ date: 1 });
     console.log(data);
